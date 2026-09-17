@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vendor Threat Intel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/css/main.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-mark">⬡</span>
+        <span class="logo-text">VENDOR<span class="logo-accent">THREAT</span></span>
+      </div>
+      <span class="header-tagline">Open-source breach intelligence scanner</span>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="main">
+
+    <!-- Search -->
+    <section class="search-section">
+      <div class="search-container">
+        <label class="search-label" for="vendor-input">Enter a vendor or company name</label>
+        <div class="search-row">
+          <input
+            id="vendor-input"
+            class="search-input"
+            type="text"
+            placeholder="e.g. Okta, SolarWinds, LastPass"
+            autocomplete="off"
+            spellcheck="false"
+          />
+          <button id="scan-btn" class="scan-btn">
+            <span class="btn-text">Scan</span>
+            <span class="btn-icon">→</span>
+          </button>
+        </div>
+        <div class="search-hints">
+          <span>Sources checked:</span>
+          <span id="source-pills" class="source-pills">loading…</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Status bar -->
+    <div id="status-bar" class="status-bar hidden">
+      <div class="status-spinner"></div>
+      <span id="status-text">Scanning sources…</span>
+    </div>
+
+    <!-- Results -->
+    <section id="results" class="results hidden">
+
+      <!-- Risk banner -->
+      <div id="risk-banner" class="risk-banner">
+        <div class="risk-left">
+          <span class="risk-label">OVERALL RISK</span>
+          <span id="risk-level" class="risk-level">—</span>
+        </div>
+        <div class="risk-stats">
+          <div class="stat"><span id="stat-critical" class="stat-num critical">0</span><span class="stat-lbl">Critical</span></div>
+          <div class="stat"><span id="stat-high" class="stat-num high">0</span><span class="stat-lbl">High</span></div>
+          <div class="stat"><span id="stat-medium" class="stat-num medium">0</span><span class="stat-lbl">Medium</span></div>
+          <div class="stat"><span id="stat-low" class="stat-num low">0</span><span class="stat-lbl">Low</span></div>
+        </div>
+        <div class="risk-right">
+          <span id="scan-meta" class="scan-meta"></span>
+        </div>
+      </div>
+
+      <!-- Pattern tags -->
+      <div id="pattern-row" class="pattern-row hidden">
+        <span class="pattern-label">Top indicators:</span>
+        <span id="pattern-tags"></span>
+      </div>
+
+      <!-- Source status -->
+      <div id="source-status-bar" class="source-status-bar"></div>
+
+      <!-- Findings list -->
+      <div id="findings-list" class="findings-list"></div>
+
+      <!-- Empty state -->
+      <div id="no-results" class="no-results hidden">
+        <span class="no-results-icon">✓</span>
+        <p class="no-results-title">No incidents found</p>
+        <p class="no-results-sub">No matches across scanned sources. This doesn't guarantee a clean record — check sources directly for full coverage.</p>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Vendor Threat Intel — local tool. Data pulled live from open sources. Not a substitute for formal vendor risk assessment.</p>
+  </footer>
+
+  <script src="/static/js/main.js"></script>
+</body>
+</html>
