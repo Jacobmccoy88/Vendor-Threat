@@ -1,3 +1,5 @@
+from __future__ import annotations
+from __future__ import annotations
 """
 VendorScanner — core engine for scraping and regex matching vendor threat intel.
 """
